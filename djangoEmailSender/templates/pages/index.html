@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+
+<main>
+    <section class="w-full max-w-[750px] m-auto mt-10 px-6  outline  outline-gray-300 shadow-slate-400 outline-1  ">
+        <div class="form">
+            <form  method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class=" pt-4 pb-4">
+                    <label for="recipient">To: &nbsp; </label>
+                    <input type="email" name="to" id="to" class="border-t-0 border-l-0 border-r-0 border-b-2 border-b-gray-600 w-[90%] max-sm:w-[370px] max-md:w-[550px] focus-visible:outline-none" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                </div>
+
+                <div class=" pt-4 pb-4">
+                    <label for="subject">Subject:  </label>
+                    <input type="text" name="subject" id="subject" class="border-t-0 border-l-0 border-r-0 border-b-2 border-b-gray-600 w-[88%] max-sm:w-[350px] max-md:w-[530px] focus-visible:outline-none">
+                </div>
+
+                <div class="mt-5">
+                    <textarea name="message" id="compose" cols="60" rows="10" class="outline outline-1 outline-gray-400 w-full p-4 text-[15px] font-['Arial']" placeholder="Compose email"></textarea>
+                </div>
+
+                <div class="hidden hide-this">
+                    <div class="mt-5 w-[500px] outline outline-1 outline-gray-400 flex items-center justify-between">
+                        <input type="text" class="w-[450px] h-[30px] text-xs focus:outline-none" name="filesrc" id="filesrc" readonly>
+                        <i id="close" class="bx bx-x text-[30px] bg-violet-500 text-white hover:bg-violet-400"></i>
+                    </div>
+                </div>
+
+
+                <div class=" mt-3 p-2 w-auto">
+                    <label for="" class=" flex items-center justify-center w-[50px] h-[50px]  text-violet-500 relative">
+                        <input type="file" name="file" accept=".doc, .docx, .pdf, .txt, image/*" id="file" class="opacity-0 w-[30px] h-[20px] outline-blue-500 absolute z-10" >
+                        <i class="bx bx-md bx-paperclip bx-rotate-270"></i>
+                    </label>
+                    
+                </div>
+
+                <div class="pb-5 flex justify-end">   
+                    <button type="submit"  class="p-3  border border-violet-700 bg-violet-700 text-[20px] text-white hover:bg-violet-500">send</button>
+                </div>
+            </form>
+        </div>
+    </section>
+</main>
+{% endblock %}

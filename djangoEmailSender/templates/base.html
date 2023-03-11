@@ -1,0 +1,32 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Sender</title>
+    <link rel="stylesheet" href="{% static '/public/stylesheets/tailwind.css' %}">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel='stylesheet'>
+</head>
+<body class="m-0 p-0 box-border">
+   <header class="w-full max-w-full flex justify-around  max-sm:justify-between max-sm:p-4 p-5 bg-violet-700">
+        <div class="logo-wrap ">
+            <a href="{% url 'index' %}" id="lg-nm" class="text-white text-xl max-sm:text-lg  no-underline">Django Email Sender</a>
+        </div>
+
+        <nav class="w-[200px] max-sm:w-[150px]">
+            <ul class="flex justify-between">
+                <li class="list-item">
+                    <a href="{% url 'about' %}" target="_self" class="text-white underline">About</a>
+                </li>
+            </ul>
+        </nav>
+   </header>
+{% block content %}
+
+{% endblock %}
+</body>
+<script src="{% static '/index.js' %}"></script>
+</html>
