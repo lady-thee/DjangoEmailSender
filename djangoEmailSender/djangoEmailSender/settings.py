@@ -32,8 +32,8 @@ ALLOWED_HOSTS = []
 #Email Backend
 
 EMAIL_HOST = 'smtp.gmail.com'  #email of python email handler
-EMAIL_HOST_USER = 'theolam6@gmail.com' #your email. It will be a default email if a sender is not specified
-EMAIL_HOST_PASSWORD = 'fdgapqckaczvtbmp'
+EMAIL_HOST_USER = 'youremail@example.com' #your email. It will be a default email if a sender is not specified
+EMAIL_HOST_PASSWORD = 'yourapppassword'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
